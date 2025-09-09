@@ -10686,14 +10686,14 @@ textarea.form-control {
   display: none !important;
 }
 
-/* Slike u slideru – pune širine, bez izduživanja */
+/* Slike u slideru â€“ pune Å¡irine, bez izduÅ¾ivanja */
 #home-section .slider-item img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* Sekcija sa ikonama (Free Shipping / Support / Secure) – bez bijele pozadine */
+/* Sekcija sa ikonama (Free Shipping / Support / Secure) â€“ bez bijele pozadine */
 .ftco-section,
 .ftco-services {
   background: transparent !important;
@@ -10713,9 +10713,9 @@ textarea.form-control {
 }
 
 .moja-slika {
-    display:block;        /* da se ponaša kao blok element */
+    display:block;        /* da se ponaÅ¡a kao blok element */
   margin: 0 auto;          /* centrira horizontalno */
-  width: auto;            /* fiksna širina */
+  width: auto;            /* fiksna Å¡irina */
   height: 500px;            /* proporcije ostaju */
 }
 
@@ -10723,4 +10723,177 @@ textarea.form-control {
 .kontakt-bold {
   
   font-weight: bold;
+}
+
+
+.hero-video-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* Ako Å¾eliÅ¡ visinu kao prije: koristi klasu js-fullheight koja se veÄ‡ raÄuna u main.js */
+  /* Ako Å¾eliÅ¡ fiksno npr. 70vh, odkomentariÅ¡i sljedeÄ‡e: */
+  /* height: 70vh; */
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* isto kao background-size: cover */
+}
+
+
+/* === PRIME BOXING — UI polish za kartice === */
+
+/* Kartica: suptilan shadow i mekši uglovi */
+.product {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  background: #fff;
+}
+.product .text { padding: 1rem 1rem 1rem 1rem; }
+
+/* Naslov i meta */
+.product .text .cat span { letter-spacing: .08em; color: #94a3b8; }
+.product .text h3 a { color: #111; }
+.product .text h3 a:hover { color: #222; text-decoration: none; }
+
+/* ===== Select (Size) — “neobrutalistički” clean stil ===== */
+.product .size-picker label { font-size: .85rem; color: #6b7280; }
+.product .size-picker select.custom-select {
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  width: 100%;
+  padding: .6rem .9rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background-color: #fff;
+  font-size: .95rem;
+  line-height: 1.2;
+  color: #111;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04) inset;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  /* custom strelica */
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7l5 5 5-5' stroke='%236b7280' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .8rem center;
+  background-size: 16px;
+  padding-right: 2.2rem; /* prostor za strelicu */
+}
+.product .size-picker select.custom-select:focus {
+  outline: none;
+  border-color: #111;
+  box-shadow: 0 0 0 3px rgba(17,17,17,.08);
+}
+.product .size-picker select.custom-select:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+/* Cijena */
+.product .pricing .price span,
+.product .pricing .price .price-sale { font-weight: 700; color: #111; }
+.product .pricing .price .price-dc { color: #9ca3af; }
+
+/* ===== Dugmad (Add to Cart / Buy Now) ===== */
+.product .bottom-area {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: .6rem;
+  margin-top: .75rem !important;
+  padding: 0 !important;
+}
+.product .bottom-area a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  border-radius: 999px;             /* pill */
+  font-size: .88rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: none;
+  border: 1px solid transparent;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+/* Primarno dugme: crno */
+.product .bottom-area .add-to-cart {
+  background: #111;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(0,0,0,.15);
+}
+.product .bottom-area .add-to-cart:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+  background: #0c0c0c;
+}
+
+/* Sekundarno dugme: outline */
+.product .bottom-area .buy-now {
+  background: #fff;
+  color: #111;
+  border-color: #111;
+}
+.product .bottom-area .buy-now:hover {
+  background: #111;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.1);
+}
+
+/* Ikonice u dugmadima malo odmakni od teksta */
+.product .bottom-area i { margin-left: .35rem; }
+
+/* Status badge (50% OFF) – mekši izgled */
+.product .status {
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: .25rem .6rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+/* Sitno podešavanje razmaka ispod Select-a i iznad cijene */
+.product .size-picker { margin: .35rem 0 .5rem; }
+.product .pricing { margin: .15rem 0 .5rem; }
+
+/* Mobile: zbij mrvu više */
+@media (max-width: 576px){
+  .product .bottom-area a { height: 42px; font-size: .86rem; }
+  .product .size-picker select.custom-select { font-size: .9rem; }
+}
+/* === FIX: razmak ispod slike + nema preklapanja === */
+.product .text{
+  position: static !important;          /* skini svako pozicioniranje koje gura gore */
+  padding-top: 1.1rem !important;       /* veći razmak od slike */
+  background: #fff;                      /* sigurnosno: čista podloga */
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.06); /* suptilan divider linija ispod slike */
+}
+
+/* Size selektor – da ne “uleti” u sliku i bude poravnat */
+.product .size-picker{ 
+  margin-top: .6rem !important; 
+}
+.product .size-picker select.custom-select{
+  display: block;
+  width: 100%;
+}
+
+/* Slika: bez dodatnih margina koje znaju da naprave “skok” */
+.product .img-prod{
+  margin-bottom: 0 !important;
+}
+
+/* Spusti cijeli grid kartica malo od hero banera (onog velikog gornjeg) */
+.hero-wrap + .ftco-section{
+  padding-top: 1.5rem;                   /* podebljaj na 2rem ako želiš još više razmaka */
+}
+
+/* (sigurnosno) dugmad na dnu nek ostanu u svom toku, bez absolute */
+.product .text .bottom-area{
+  position: static !important;
+  margin-top: .75rem !important;
 }
